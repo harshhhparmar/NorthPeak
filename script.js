@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loader.classList.add('hidden');
         document.body.style.overflowY = 'auto'; // Re-enable scroll
         initScrollAnimations();
-    }, 2000);
+    }, 0);
     document.body.style.overflowY = 'hidden'; // Prevent scroll during load
 
     // 2. Custom Magnetic Cursor
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
                 const target = +counter.getAttribute('data-target');
-                const duration = 2000;
+                const duration = 0;
                 let startTime = null;
 
                 const animateCounter = (timestamp) => {
