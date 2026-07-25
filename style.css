@@ -125,23 +125,23 @@ p { font-size: clamp(1rem, 1.2vw, 1.125rem); color: var(--text-muted); line-heig
 .loader.hidden { opacity: 0; pointer-events: none; }
 .loader-content { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .loader-text { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: white; overflow: hidden; position: relative; }
-.loader-text::after { content: ''; position: absolute; inset: 0; background: var(--bg-dark); transform-origin: right; animation: revealText 1.5s var(--ease-out-expo) forwards; }
+.loader-text::after { content: ''; position: absolute; inset: 0; background: var(--bg-dark); transform-origin: right; animation: revealText 1.5s var(--ease-out-expo) forwards; will-change: transform; }
 .loader-progress { width: 200px; height: 2px; background: rgba(255,255,255,0.1); position: relative; overflow: hidden; }
-.loader-progress::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: var(--primary); transform: translateX(-100%); animation: progressLoad 1.5s var(--ease-out-expo) forwards; }
+.loader-progress::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: var(--primary); transform: translateX(-100%); animation: progressLoad 1.5s var(--ease-out-expo) forwards; will-change: transform; }
 @keyframes revealText { 0% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
 @keyframes progressLoad { 0% { transform: translateX(-100%); } 100% { transform: translateX(0); } }
 
 /* Custom Cursor */
 @media (pointer: fine) {
-    .cursor { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: opacity 0.3s, background 0.3s; }
-    .cursor-follower { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.15s var(--ease-out-expo), width 0.3s, height 0.3s, border-color 0.3s; }
+    .cursor { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: opacity 0.3s, background 0.3s; will-change: transform; }
+    .cursor-follower { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.15s var(--ease-out-expo), width 0.3s, height 0.3s, border-color 0.3s; will-change: transform; }
     .cursor.active { opacity: 0; }
     .cursor-follower.active { width: 80px; height: 80px; background: rgba(212, 255, 63, 0.1); border-color: var(--primary); backdrop-filter: blur(2px); }
 }
 @media (max-width: 768px) { .cursor, .cursor-follower { display: none; } }
 
 /* Scroll Progress & Back to Top */
-.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); width: 0%; z-index: 1000; transform-origin: left; transition: width 0.1s linear; }
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); width: 0%; z-index: 1000; transform-origin: left; transition: width 0.1s linear; will-change: width; }
 .toast { position: fixed; bottom: -100px; right: 30px; background: var(--text-main); color: var(--bg-dark); padding: 1.25rem 2.5rem; border-radius: var(--radius-sm); font-family: var(--font-display); font-weight: 600; box-shadow: 0 20px 40px rgba(0,0,0,0.5); transition: bottom 0.6s var(--ease-out-expo); z-index: 1000; }
 .toast.show { bottom: 30px; }
 .back-to-top { position: fixed; bottom: 40px; right: 40px; width: 60px; height: 60px; border-radius: 50%; background: var(--bg-glass); border: 1px solid var(--border-glass); color: white; display: flex; justify-content: center; align-items: center; cursor: pointer; opacity: 0; pointer-events: none; transition: all var(--transition-fast); z-index: 900; backdrop-filter: blur(10px); transform: translateY(20px); }
@@ -361,6 +361,7 @@ p { font-size: clamp(1rem, 1.2vw, 1.125rem); color: var(--text-muted); line-heig
 .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 1.25rem 0; background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); color: white; font-family: var(--font-sans); font-size: 1.25rem; transition: border-color var(--transition-fast), background var(--transition-fast); border-radius: 0; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+.form-group select option { background: #050507; color: white; padding: 1rem; }
 .error-msg { color: var(--accent); font-size: 0.875rem; position: absolute; bottom: -24px; left: 0; opacity: 0; transform: translateY(-5px); transition: all var(--transition-fast); }
 .form-group.error input, .form-group.error select, .form-group.error textarea { border-color: var(--accent); }
 .form-group.error .error-msg { opacity: 1; transform: translateY(0); }
