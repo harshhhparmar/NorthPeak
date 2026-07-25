@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthPeak Digital | Premium SaaS Agency</title>
+    <meta name="description" content="NorthPeak Digital is an award-winning SaaS agency specializing in design, development, and digital marketing. We build the future of digital products.">
+    
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Noise Overlay -->
+    <svg class="noise-overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.1 0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <span class="loader-text" aria-live="polite">NorthPeak.</span>
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+    <!-- Animated Cursor -->
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+    <!-- Sticky Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo magnetic-text" aria-label="NorthPeak Digital Home">NorthPeak<span class="dot">.</span></a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="line-1"></span>
+                <span class="line-2"></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Expertise</a>
+                <a href="#portfolio" class="nav-link">Work</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="btn btn-primary nav-cta magnetic">Let's Talk</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="blobs" aria-hidden="true">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+            <div class="container hero-container reveal">
+                <div class="hero-badge reveal-item">Award-Winning SaaS Agency</div>
+                <h1 class="hero-title reveal-item" id="hero-title">
+                    We <span class="typewriter-text" id="typewriter"></span><span class="cursor-blink">|</span><br> SaaS Brands.
+                </h1>
+                <p class="hero-subtitle reveal-item">Crafting digital experiences that transform modern SaaS brands. Design, development, and strategy engineered for the future.</p>
+                <div class="hero-cta reveal-item">
+                    <a href="#contact" class="btn btn-primary magnetic">Start a Project</a>
+                    <a href="#portfolio" class="btn btn-secondary magnetic">View Our Work</a>
+                </div>
+                <div class="hero-stats reveal-item">
+                    <div class="stat">
+                        <h3 class="counter" data-target="150">0</h3><span class="plus">+</span>
+                        <p>Projects Delivered</p>
+                    </div>
+                    <div class="stat divider"></div>
+                    <div class="stat">
+                        <h3 class="counter" data-target="45">0</h3>
+                        <p>Industry Awards</p>
+                    </div>
+                    <div class="stat divider"></div>
+                    <div class="stat">
+                        <h3 class="counter" data-target="98">0</h3><span class="plus">%</span>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Trusted Companies -->
+        <section id="trusted" class="trusted section">
+            <div class="container reveal">
+                <p class="section-subtitle text-center">Trusted by innovative teams worldwide</p>
+                <div class="trusted-logos">
+                    <div class="logo-placeholder">Acme Corp</div>
+                    <div class="logo-placeholder">GlobalTech</div>
+                    <div class="logo-placeholder">Nexus SaaS</div>
+                    <div class="logo-placeholder">CloudSync</div>
+                    <div class="logo-placeholder">Vanguard UI</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Our Expertise</h2>
+                    <p>End-to-end solutions for ambitious digital products.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card glass-card reveal">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>Product Design</h3>
+                        <p>User-centric UI/UX design that engages users and drives conversions.</p>
+                    </div>
+                    <div class="service-card glass-card reveal" style="transition-delay: 100ms;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>High-performance, scalable web applications built with modern stacks.</p>
+                    </div>
+                    <div class="service-card glass-card reveal" style="transition-delay: 200ms;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                        </div>
+                        <h3>SaaS Architecture</h3>
+                        <p>Robust cloud infrastructure and scalable database design.</p>
+                    </div>
+                    <div class="service-card glass-card reveal">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 12l-4-4-4 4M12 8v8"></path></svg>
+                        </div>
+                        <h3>Growth Strategy</h3>
+                        <p>Data-driven marketing and SEO to scale your user base.</p>
+                    </div>
+                    <div class="service-card glass-card reveal" style="transition-delay: 100ms;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3>Brand Identity</h3>
+                        <p>Memorable brand systems that resonate with your target audience.</p>
+                    </div>
+                    <div class="service-card glass-card reveal" style="transition-delay: 200ms;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Enterprise-grade security audits and implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="why-us section">
+            <div class="container">
+                <div class="why-us-content grid-2 reveal">
+                    <div class="why-text">
+                        <h2>Why Partner With Us?</h2>
+                        <p>We don't just build websites; we engineer digital businesses. Our approach bridges the gap between stunning aesthetics and measurable performance.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Senior-only talent pool</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Transparent, agile process</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Performance-obsessed engineering</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="why-visual glass-panel">
+                        <!-- Abstract CSS Art/Illustration -->
+                        <div class="abstract-art">
+                            <div class="circle-1"></div>
+                            <div class="circle-2"></div>
+                            <div class="grid-lines"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Featured Work</h2>
+                    <p>Recent projects that pushed boundaries.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item glass-card reveal">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="FinTech Dashboard" loading="lazy">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Nexus Pay</h3>
+                            <p>Complete UX redesign for a leading payment gateway.</p>
+                            <a href="#" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item glass-card reveal" style="transition-delay: 100ms;">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="AI Analytics Interface" loading="lazy">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>DataSphere</h3>
+                            <p>Frontend architecture for an AI-driven analytics SaaS.</p>
+                            <a href="#" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item glass-card reveal" style="transition-delay: 200ms;">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=800&q=80" alt="E-Commerce App" loading="lazy">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Aura Lifestyle</h3>
+                            <p>High-conversion headless commerce platform.</p>
+                            <a href="#" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Client Success</h2>
+                    <p>Don't just take our word for it.</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card glass-card reveal">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"NorthPeak transformed our SaaS platform. The new UI increased user retention by 40% in just two months."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">SJ</div>
+                            <div>
+                                <h4>Sarah Jenkins</h4>
+                                <span>CEO, DataSphere</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card reveal" style="transition-delay: 100ms;">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Their technical expertise is unmatched. They delivered a complex headless architecture ahead of schedule."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">MR</div>
+                            <div>
+                                <h4>Michael Ross</h4>
+                                <span>CTO, Nexus Pay</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Transparent Pricing</h2>
+                    <p>Investment plans tailored for growth.</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card glass-card reveal">
+                        <h3>Starter</h3>
+                        <div class="price"><span>$</span>4,999</div>
+                        <p class="plan-desc">Perfect for early-stage startups needing a solid foundation.</p>
+                        <ul class="plan-features">
+                            <li>Custom UX/UI Design (up to 5 pages)</li>
+                            <li>Responsive Web Development</li>
+                            <li>Basic SEO Setup</li>
+                            <li>1 Month Support</li>
+                        </ul>
+                        <button class="btn btn-secondary w-full magnetic">Choose Starter</button>
+                    </div>
+                    <div class="pricing-card glass-card popular reveal" style="transition-delay: 100ms;">
+                        <div class="badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <div class="price"><span>$</span>9,999</div>
+                        <p class="plan-desc">Comprehensive solution for scaling SaaS companies.</p>
+                        <ul class="plan-features">
+                            <li>Advanced UX/UI (up to 15 pages)</li>
+                            <li>Full-Stack Development</li>
+                            <li>CMS Integration</li>
+                            <li>Advanced SEO & Analytics</li>
+                            <li>3 Months Support</li>
+                        </ul>
+                        <button class="btn btn-primary w-full magnetic">Choose Pro</button>
+                    </div>
+                    <div class="pricing-card glass-card reveal" style="transition-delay: 200ms;">
+                        <h3>Enterprise</h3>
+                        <div class="price">Custom</div>
+                        <p class="plan-desc">Dedicated team for complex architecture and continuous growth.</p>
+                        <ul class="plan-features">
+                            <li>Unlimited Design Iterations</li>
+                            <li>Custom Microservices</li>
+                            <li>Dedicated Account Manager</li>
+                            <li>24/7 Priority Support</li>
+                            <li>Ongoing Optimization</li>
+                        </ul>
+                        <button class="btn btn-secondary w-full magnetic">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Frequent Questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item glass-panel reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            What is your typical project timeline?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Most projects take between 4 to 12 weeks, depending on complexity. A standard SaaS marketing site usually takes 4-6 weeks, while a full web application can take 8-12 weeks.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-panel reveal" style="transition-delay: 100ms;">
+                        <button class="faq-question" aria-expanded="false">
+                            Do you work with startups or established companies?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We work with both! We help funded startups build their MVPs and scale, and we partner with established enterprises to modernize their legacy systems and improve user experience.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-panel reveal" style="transition-delay: 200ms;">
+                        <button class="faq-question" aria-expanded="false">
+                            What tech stack do you use?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We are tech-agnostic but lean towards modern JavaScript ecosystems (React, Vue, Node.js) and Jamstack architectures for maximum performance, security, and scalability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="contact-grid grid-2 reveal">
+                    <div class="contact-info">
+                        <h2>Ready to scale?</h2>
+                        <p>Tell us about your project, and we'll get back to you within 24 hours.</p>
+                        <div class="contact-methods">
+                            <div class="method">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <span>hello@northpeak.digital</span>
+                            </div>
+                            <div class="method">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <span>San Francisco, CA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper glass-panel">
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                                <span class="error-msg">Please enter your name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                <span class="error-msg">Please enter a valid email</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="" disabled selected>Select a budget</option>
+                                    <option value="5k-10k">$5,000 - $10,000</option>
+                                    <option value="10k-25k">$10,000 - $25,000</option>
+                                    <option value="25k+">$25,000+</option>
+                                </select>
+                                <span class="error-msg">Please select a budget range</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project..."></textarea>
+                                <span class="error-msg">Please enter your message</span>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full magnetic">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">NorthPeak<span class="dot">.</span></a>
+                    <p>Crafting digital excellence for modern brands.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Work</a>
+                    <a href="#careers">Careers</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="#services">Design</a>
+                    <a href="#services">Development</a>
+                    <a href="#services">Strategy</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="#" aria-label="Dribbble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NorthPeak Digital. All rights reserved.</p>
+                <p class="training-task">Built for <a href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer">Digital Heroes Training Task</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
