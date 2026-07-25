@@ -23,7 +23,7 @@
     
     /* Layout & Spacing */
     --container-w: 1440px;
-    --section-py: clamp(6rem, 15vw, 15rem);
+    --section-py: clamp(5rem, 10vw, 15rem);
     
     --radius-sm: 0.5rem;
     --radius-md: 1rem;
@@ -183,7 +183,9 @@ p { font-size: clamp(1rem, 1.2vw, 1.125rem); color: var(--text-muted); line-heig
    Hero Section
    ========================================================================== */
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 8rem; overflow: hidden; }
+@media (max-width: 768px) { .hero { min-height: auto; padding-top: 6rem; padding-bottom: 2rem; } }
 .hero-container { position: relative; z-index: 2; padding: clamp(4rem, 8vw, 8rem) 0; text-align: center; max-width: 1200px; margin-inline: auto; display: flex; flex-direction: column; align-items: center; }
+@media (max-width: 768px) { .hero-container { padding: 2rem 0; } }
 .hero-badge { display: inline-block; padding: 0.5rem 1.5rem; border: 1px solid var(--border-glass); border-radius: var(--radius-pill); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; background: rgba(255,255,255,0.02); }
 .hero-title { line-height: 1.05; margin-bottom: 2rem; }
 .hero-subtitle { font-size: clamp(1.25rem, 2vw, 1.5rem); max-width: 700px; margin-bottom: 3.5rem; line-height: 1.5; text-align: center;}
@@ -245,12 +247,31 @@ p { font-size: clamp(1rem, 1.2vw, 1.125rem); color: var(--text-muted); line-heig
 .feature-icon-wrapper { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 4px; }
 .feature-list svg { width: 20px; height: 20px; stroke: #000; stroke-width: 3; }
 .why-visual { height: 100%; min-height: 600px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 1px solid var(--border-glass); background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); }
+@media (max-width: 768px) { .why-visual { min-height: 400px; } }
 .abstract-art { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
 .circle-1, .circle-2, .circle-3 { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); }
 .circle-1 { width: 300px; height: 300px; border-color: var(--primary); animation: rotate 20s linear infinite; }
 .circle-2 { width: 450px; height: 450px; animation: rotate 30s linear infinite reverse; }
 .circle-3 { width: 600px; height: 600px; border: 1px dashed rgba(255,255,255,0.15); animation: rotate 40s linear infinite; }
 .glass-orb { position: absolute; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(255,255,255,0.05)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.5); animation: floatOrb 6s ease-in-out infinite alternate; }
+
+.trust-badge-container { position: absolute; width: 320px; height: 320px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; animation: floatOrb 8s ease-in-out infinite alternate; }
+@media (max-width: 768px) { 
+    .circle-1 { width: 220px; height: 220px; }
+    .circle-2 { width: 320px; height: 320px; }
+    .circle-3 { width: 420px; height: 420px; }
+    .trust-badge-container { width: 240px; height: 240px; }
+}
+.trust-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--border-glass); opacity: 0.8; filter: grayscale(50%); transition: all var(--transition-smooth); }
+.why-visual:hover .trust-img { filter: grayscale(0%); opacity: 1; border-color: var(--primary); }
+.trust-badge { position: absolute; bottom: -20px; right: -20px; display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; background: rgba(5,5,7,0.85); border: 1px solid var(--border-glass); border-radius: var(--radius-pill); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); transform: translateY(0); transition: transform var(--transition-fast); }
+.why-visual:hover .trust-badge { transform: translateY(-10px); border-color: var(--primary); }
+.trust-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: #000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.trust-icon svg { width: 24px; height: 24px; }
+.trust-text { display: flex; flex-direction: column; }
+.trust-text strong { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; line-height: 1; margin-bottom: 0.25rem; color: white; }
+.trust-text span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); line-height: 1; }
+
 @keyframes rotate { to { transform: rotate(360deg); } }
 @keyframes floatOrb { 0% { transform: translateY(-20px); } 100% { transform: translateY(20px); } }
 
@@ -261,6 +282,7 @@ p { font-size: clamp(1rem, 1.2vw, 1.125rem); color: var(--text-muted); line-heig
 @media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; gap: 3rem; } }
 .portfolio-item { padding: 0; overflow: hidden; border: none; background: transparent; display: flex; flex-direction: column; gap: 1.5rem; cursor: pointer; text-align: left; }
 .portfolio-image { height: 450px; border-radius: var(--radius-lg); overflow: hidden; position: relative; }
+@media (max-width: 768px) { .portfolio-image { height: 300px; } }
 .portfolio-image::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.15); transition: background var(--transition-smooth); }
 .portfolio-item:hover .portfolio-image::after { background: transparent; }
 .portfolio-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out-expo); transform: scale(1.02); }
