@@ -1,12 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Premium Loader
-    const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-        document.body.style.overflowY = 'auto'; // Re-enable scroll
-        initScrollAnimations();
-    }, 0);
-    document.body.style.overflowY = 'hidden'; // Prevent scroll during load
+    initScrollAnimations();
+    document.body.style.overflowY = 'auto'; // Ensure scroll is enabled
 
     // 2. Custom Magnetic Cursor
     const cursor = document.getElementById('cursor');
