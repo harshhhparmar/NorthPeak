@@ -19,19 +19,13 @@
     <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <!-- Noise Overlay -->
-    <svg class="noise-overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <filter id="noiseFilter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
-            <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.1 0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-    </svg>
+    <div class="noise-overlay"></div>
 
     <!-- Loading Screen -->
     <div id="loader" class="loader">
@@ -214,7 +208,7 @@
                             <div class="circle-2"></div>
                             <div class="grid-lines"></div>
                             <div class="trust-badge-container">
-                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Corporate Team Collaboration" width="600" height="600" class="trust-img" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Corporate Team Collaboration" width="600" height="600" class="trust-img" loading="lazy" decoding="async">
                                 <div class="trust-badge glass-card">
                                     <div class="trust-icon">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
@@ -241,7 +235,7 @@
                 <div class="portfolio-grid">
                     <div class="portfolio-item glass-card reveal">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="FinTech Dashboard" width="800" height="600" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="FinTech Dashboard" width="800" height="600" loading="lazy" decoding="async">
                         </div>
                         <div class="portfolio-info">
                             <h3>Nexus Pay</h3>
@@ -251,7 +245,7 @@
                     </div>
                     <div class="portfolio-item glass-card reveal" style="transition-delay: 100ms;">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="AI Analytics Interface" width="800" height="600" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="AI Analytics Interface" width="800" height="600" loading="lazy" decoding="async">
                         </div>
                         <div class="portfolio-info">
                             <h3>DataSphere</h3>
@@ -261,7 +255,7 @@
                     </div>
                     <div class="portfolio-item glass-card reveal" style="transition-delay: 200ms;">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=800&q=80" alt="E-Commerce App" width="800" height="600" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=800&q=80" alt="E-Commerce App" width="800" height="600" loading="lazy" decoding="async">
                         </div>
                         <div class="portfolio-info">
                             <h3>Aura Lifestyle</h3>
@@ -454,7 +448,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo">NorthPeak<span class="dot">.</span></a>
+                    <a href="#" class="logo" aria-label="NorthPeak Digital Home">NorthPeak<span class="dot">.</span></a>
                     <p>Crafting digital excellence for modern brands.</p>
                 </div>
                 <div class="footer-links">
@@ -485,6 +479,6 @@
         </div>
     </footer>
 
-    <script type="module" src="/script.js"></script>
+    <script type="module" src="/script.js" defer></script>
 </body>
 </html>
